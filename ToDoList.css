@@ -1,0 +1,151 @@
+#todo{
+    border: 2px solid red;
+    height: 30vh;
+    width: 50vw;
+    margin-top: 3vh;
+    border-radius: 25px;
+    padding: 15px 15px 14px 15px;
+    box-shadow: -3px -3px 5px red;
+    overflow-y: scroll;
+}
+
+.field{
+    margin: 3vh 5vw;
+    position: sticky;
+}
+h2{
+    text-align: center;
+    text-decoration: underline;
+}
+h4{
+    text-align: center;
+}
+.todopre{
+    border: 1px solid lightgreen;
+    border-radius: 25px;
+    margin-top: 3vh;
+    padding: 9px;
+}
+button{
+    margin-left: 12vw;
+    margin-right: 5vw;
+    width: 9vw;
+    height: 5vh;
+    border-radius: 25px;
+    background-color: darkred;
+    color: white;
+    border: 1px solid currentColor;
+}
+button:hover{
+    color: darkred;
+    background-color: white;
+    border: 1px solid darkred;
+}
+#canvas{
+    width: 55vw;
+    margin-top: 8vh;font-size: large;
+    padding: 5px;
+    box-shadow: -3px -3px 5px grey;
+    border-radius: 35px;
+    margin-right: 3vw;
+    border: 1px solid grey;
+    
+}
+#indicator{
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+#body{
+    display: flex;
+
+}
+body,html{
+    width: 100vw;
+    height: 100vh;
+}
+#ntodos{
+    border: 2px solid green;
+    width: 40vw;
+    height: 100vh;
+    border-radius: 28px;
+    box-sizing: border-box;
+ box-shadow: -2px -3px 3px green;
+ padding: 15px;
+ margin-top: 8vh;
+ overflow-y: scroll;
+
+}
+nav{
+    background-color: darkgreen;
+    color: white;
+    height: 8vh;
+    width: 100vw;
+}
+#t{
+    width: 35vw;
+    height: 6vh;
+    border-radius: 35px;
+    font-size: large;
+}
+#d{
+    border-radius: 35px;
+    padding: 8px 25px 8px 25px;
+    height: 25vh;
+    width: 45vw;
+
+}
+ul{
+    list-style: none;
+}
+@media screen and (max-width:400px) {
+    
+    #todo{
+        border: 2px solid red;
+        height: 30vh;
+        width: 80vw;
+        margin-top: 3vh;
+        border-radius: 25px;
+        padding: 15px 15px 14px 15px;
+        box-shadow: -3px -3px 5px red;
+        overflow-y: scroll;
+        margin-left: 0px;
+    }
+    nav{
+        background-color: darkgreen;
+        color: white;
+        height: 8vh;
+        width: 100vw;
+    }
+    #ntodos{
+        border: 2px solid green;
+        width: 100vw;
+        height: 50vh;
+        border-radius: 28px;
+        box-sizing: border-box;
+     box-shadow: -2px -3px 3px green;
+     padding: 15px;
+     margin-top: 8vh;
+     overflow-y: scroll;
+    
+    }
+    body,html{
+        width: 100vw;
+        
+    }
+    #body{
+        display: block;
+    }
+    #canvas{
+        width: 100vw;
+    }
+    #t{
+        width: 60vw;
+
+    }
+    #d{
+        width: 80vw;
+    }
+    button{
+        width: auto;
+    }
+}

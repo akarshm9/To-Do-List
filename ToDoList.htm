@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKM To-Do-list</title>
+    <link rel="stylesheet" href="ToDoList.css">
+</head>
+<body>
+    <nav>
+        E-SikshaTutorials
+    </nav>
+    <h2>To-Do-List</h2>
+    <div id="body">
+    <div id="canvas">
+        <h4>Add a to-do</h4>
+    <form action="">
+        <div class="field">
+        <label for="t">Title
+            <input type="text" name="title" id="t">
+        </label> 
+    </div>
+    <div class="field">
+        <label for="d">
+            <input type="text" name="description" id="d"  placeholder="Enter description here..">
+        </label>
+    </div>
+    <button id="add" type="button">Add</button><button id="del" type="button">Delete</button>
+    </form>
+    <div id="todo">
+        <p id="indicator">Your Special Todo will presented here</p>
+    </div>
+</div>
+<div id="ntodos">
+    <h2>Some daily todos</h2>
+    <p>
+        <ul>
+            <li class="todopre"><h3 id="first">Rise early in morning</h3><p id="harry">Rising early in the morning is a good habit and you must also rise in the morning. Also you have your work area where you must have to present on time. So, rise in the morning</p><button onclick="done1()">Done</button><button onclick="mar1()">Mark  Done</button></li>
+            <li class="todopre"><h3 id="second">Take breakfaswhatst</h3><p id="mosh">Taking breakfast during morning time is good habit it will make your digestive system and yourself healthy. So take breakfast on time.</p><button onclick="done2()">Done</button><button onclick="mar2()">Mark  Done</button></li>
+            <li class="todopre"><h3 id="third">Go to your work</h3><p id="chris">After taking breakfast you must go to your work and complete your quota of your work. So, go to work.</p><button onclick="done3()">Done</button><button onclick="mar3()">Mark  Done</button></li>
+            <li class="todopre"><h3 id="fourth">Finish lunch</h3><p id="shani">After coming your work come to home and finish your lunch. So, take your lunch timely to maintain your body health.</p><button onclick="done4()">Done</button><button onclick="mar4()">Mark  Done</button></li>
+            <li class="todopre"><h3 id="fifth">Take a rest</h3><p id="giri">After coming to home and finishing your lunch just go to your bed becasue you will take some rest after a heavy work. So, take a rest of at most 30 minutes. </p><button onclick="done5()">Done</button><button onclick="mar5()">Mark  Done</button></li>
+            <li class="todopre"><h3 id="sixth">Go to playground</h3><p id="akarsh">After taking rest you must go to a evening walk or playing some outdoor games. So, go to your near playground to play games.</p><button onclick="done6()">Done</button><button onclick="mar6()">Mark  Done</button></li>
+            <li class="todopre"><h3 id="seventh">Go to study</h3><p id="nishant">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus facilis labore est voluptates ut adipisci ipsa! Cumque error aperiam ab repellat dignissimos adipisci!</p><button onclick="done7()">Done</button><button onclick="mar7()">Mark  Done</button></li>
+            <li class="todopre"><h3 id="eighth">Take dinner and go to bed</h3><p id="hmit">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus facilis labore est voluptates ut adipisci ipsa! Cumque error aperiam ab repellat dignissimos adipisci!</p><button onclick="done8()">Done</button><button onclick="mar8()">Mark  Done</button></li>
+        </ul>
+    </p>
+</div>
+</div>
+</body>
+<script src="ToDoList.js"></script>
+<script>
+    let del = document.getElementById('del');
+let add = document.getElementById('add');
+let t = document.getElementById('t');
+let d = document.getElementById('d');
+let todos = document.getElementById('todo');
+let i;
+
+add.addEventListener("click", (e) => {
+    let title = t.value;
+    let desc = d.value;
+    e.preventDefault();
+
+    console.log(e);
+
+    localStorage.setItem("ToDos", JSON.stringify([title, desc]));
+    todos.innerHTML = `<h3>${title}</h3>
+    <p>${desc}</p>`;
+if (title=="" && desc=="") {
+    todos.innerText="Please enter title and description for your todos"
+}
+else if(title=="")
+{
+    todos.innerText="Please enter the title";
+}
+else if(desc==""){
+    todos.innerText="Please enter the description";
+}
+else{
+    console.log("hello")
+}
+   
+
+})
+
+del.addEventListener("click", (e) => {
+    let title=t.value;
+    let desc=d.value;
+    e.preventDefault();
+    localStorage.clear();
+    todos.innerHTML="";
+    if (title=="" && desc=="") {
+        todos.innerText="Nothing to delete!!";
+    }
+})
+var first=document.getElementById('first');
+var second=document.getElementById('second');
+var third=document.getElementById('third');
+var fourth=document.getElementById('fourth');
+var fifth=document.getElementById('fifth');
+
+let harry=document.getElementById('harry');
+let chris=document.getElementById('chris');
+let shani=document.getElementById('shani');
+let giri=document.getElementById('giri');
+let mosh=document.getElementById('mosh');
+
+function done1() {
+    first.style.textDecoration="line-through";
+    harry.style.textDecoration="line-through";
+    
+}
+function done2() {
+    second.style.textDecoration="line-through";
+    mosh.style.textDecoration="line-through";
+}
+function done3() {
+    third.style.textDecoration="line-through";
+    chris.style.textDecoration="line-through";
+}
+function done4() {
+    fourth.style.textDecoration="line-through";
+    shani.style.textDecoration="line-through";
+}
+function done5() {
+    fifth.style.textDecoration="line-through";
+    giri.style.textDecoration="line-through";
+}
+function done6() {
+    sixth.style.textDecoration="line-through";
+    akarsh.style.textDecoration="line-through";
+}
+function done7() {
+    seventh.style.textDecoration="line-through";
+    nihant.style.textDecoration="line-through";
+}
+function done8() {
+    eighth.style.textDecoration="line-through";
+    ashmit.style.textDecoration="line-through";
+}
+
+
+
+function mar1() {
+    first.style.textDecoration="underline";
+    harry.style.textDecoration="underline";
+}
+function mar2() {
+    second.style.textDecoration="underline";
+    mosh.style.textDecoration="underline";
+}
+function mar3() {
+    third.style.textDecoration="underline";
+    chris.style.textDecoration="underline";
+}
+function mar4() {
+    fourth.style.textDecoration="underline";
+    shani.style.textDecoration="underline";
+}
+function mar5() {
+    fifth.style.textDecoration="underline";
+    giri.style.textDecoration="underline";
+}
+function mar6() {
+    sixth.style.textDecoration="underline";
+    akarsh.style.textDecoration="underline";
+}
+function mar7() {
+    seventh.style.textDecoration="underline";
+    nihant.style.textDecoration="underline";
+}
+function mar8() {
+    eighth.style.textDecoration="underline";
+    ashmit.style.textDecoration="underline";
+}
+</script>
+</html>
